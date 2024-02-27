@@ -18,17 +18,17 @@ class MyFirstPage extends StatefulWidget {
 }
 
 class MyFirstPageState extends State<MyFirstPage> {
+  String msg1 = '';
+  String msg2 = '';
   bool enabled = false;
   int previousCount = 0;
   int timesClicked = 0;
-  String msg1 = '';
-  String msg2 = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('A2 - User Input'),
+        title: const Text('Assignment2 - User Input'),
       ),
       body: Column(
         children: <Widget>[
@@ -38,7 +38,7 @@ class MyFirstPageState extends State<MyFirstPage> {
               //TODO: Replace this Text Widget
               // and build the label and switch here
               // as children of the row.
-                          Padding(
+           Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Enable Buttons',
@@ -163,6 +163,7 @@ class MyFirstPageState extends State<MyFirstPage> {
                       }
                       return null;
                     },
+
                     onSaved: (value) {
                       firstName = value;
                     },
@@ -176,8 +177,8 @@ class MyFirstPageState extends State<MyFirstPage> {
                         formKey.currentState?.save();
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text('Hey There, Your name is $firstName'),
-                            duration: Duration(seconds: 5),
+                            content: Text('Hey $firstName , you rocked assignment-02'),
+                            duration: Duration(seconds: 6),
                             action: SnackBarAction(
                               label: 'Click Me',
                               onPressed: () {
